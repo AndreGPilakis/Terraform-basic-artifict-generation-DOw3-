@@ -14,10 +14,11 @@ jobs:
             - run: npm test
             - run: npm pack
   package:
+    executor:
+      name: node/default
     steps:
       - checkout
-      - run: echo "package echo"
-  # make-artifacts:
+      # make-artifacts:
   #   executor:
   #     name: node/default
   #   steps:
