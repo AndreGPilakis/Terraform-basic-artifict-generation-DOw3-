@@ -13,10 +13,12 @@ jobs:
             - run: npm install
             - run: npm test
             - run: npm pack
-            - run: 
-              name: Test Artifact
-              command: |
-                echo "This is thest artifact";
+            - run:
+                name: Creating Dummy Artifacts
+                command: |
+                echo "my artifact file" > /tmp/artifact-1;
+                mkdir /tmp/artifacts;
+                echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;      
 workflows:
     build-and-test:
       jobs:
