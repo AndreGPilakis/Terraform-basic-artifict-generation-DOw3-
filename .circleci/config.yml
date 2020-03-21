@@ -11,8 +11,8 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
-            - run: npm pack  
+            - run: npm pack
 workflows:
     build-and-test:
       jobs:
-        - build-and-test:
+        - build-and-test
