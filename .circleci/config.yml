@@ -23,16 +23,14 @@ jobs:
             - run: npm test
             - run: npm pack
 
-  do-artifacts:
+  create-the-artifacts:
     executor:
       name: node/default
     steps:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm install
-            - run: npm test
-            - run: npm pack
+            - run: echo "artifacts make"
 
       # make-artifacts:
   #   executor:
