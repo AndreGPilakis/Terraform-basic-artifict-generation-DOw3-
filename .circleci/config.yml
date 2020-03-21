@@ -3,6 +3,15 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   working_directory: /tmp
+  make-artifacts:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - arts:
+          steps:
+            - run: echo "artifact echo"
+              
   build-and-test:
     executor:
       name: node/default
@@ -13,14 +22,7 @@ jobs:
             - run: npm install
             - run: npm test
             - run: npm pack
-  arts:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - arts:
-          steps:
-            - run: echo "artifact echo"
+
       # make-artifacts:
   #   executor:
   #     name: node/default
@@ -50,4 +52,4 @@ workflows:
           only:
             - master
       jobs:
-        - arts
+        - make-artifacts
