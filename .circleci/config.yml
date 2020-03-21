@@ -57,10 +57,11 @@ workflows:
     build-and-test:
       jobs:
         - build-and-test
+
     create-the-artifacts:  
       jobs:
         - do-artifacts
-      branches:
-        only:
-          - master
+      # branches:
+      #   only:
+      #     - master
           
