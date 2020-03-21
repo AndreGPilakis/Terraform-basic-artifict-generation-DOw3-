@@ -57,6 +57,7 @@ workflows:
     build-and-test:
       jobs:
         - build-and-test
+    create-the-artifacts:  
       filters:
         branches:
           only:
