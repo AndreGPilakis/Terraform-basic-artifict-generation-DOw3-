@@ -13,7 +13,12 @@ jobs:
             - run: npm install
             - run: npm test
             - run: npm pack
-  
+  package:
+    excutor:
+      name: node/default
+    steps:
+      - checkout
+      - run: echo "package echo"
   # make-artifacts:
   #   executor:
   #     name: node/default
