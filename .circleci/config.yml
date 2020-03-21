@@ -19,8 +19,8 @@ jobs:
     steps:
       - checkout
       - make-artifact
-        steps:
-          - run: echo "artifact echo"
+          steps:
+            - run: echo "artifact echo"
       # make-artifacts:
   #   executor:
   #     name: node/default
