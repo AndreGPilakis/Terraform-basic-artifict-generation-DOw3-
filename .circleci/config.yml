@@ -8,10 +8,10 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - arts:
+      - make-artifacts:
           steps:
             - run: echo "artifact echo"
-              
+
   build-and-test:
     executor:
       name: node/default
