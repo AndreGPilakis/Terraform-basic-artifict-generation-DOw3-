@@ -9,7 +9,7 @@ jobs:
     steps:
       - run:
         command: |
-        echo "make artifacts echo";
+          echo "make artifacts echo";
   build-and-test:
     executor:
       name: node/default
