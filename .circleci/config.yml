@@ -60,8 +60,7 @@ workflows:
 
     create-the-artifacts:  
       jobs:
-        build:
-          branches:
-            only:
-              - master
+        branches:
+          only:
+            - master
           
