@@ -2,17 +2,28 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  working_directory: /tmp
-  make-artifacts:
+  # working_directory: /tmp
+  # make-artifacts:
+  #   executor:
+  #     name: node/default
+  #   steps:
+  #     - checkout
+  #     - make-artifacts:
+  #         steps:
+  #           - run: echo "artifact echo"
+
+  build-and-test:
     executor:
       name: node/default
     steps:
       - checkout
-      - make-artifacts:
+      - node/with-cache:
           steps:
-            - run: echo "artifact echo"
+            - run: npm install
+            - run: npm test
+            - run: npm pack
 
-  build-and-test:
+  build-and-test2:
     executor:
       name: node/default
     steps:
@@ -46,10 +57,11 @@ workflows:
     build-and-test:
       jobs:
         - build-and-test
-    make-artifacts:
-      filters:
-        branches:
-          only:
-            - master
-      jobs:
-        - make-artifacts
+        - build-and-test2
+    # make-artifacts:
+    #   filters:
+    #     branches:
+    #       only:
+    #         - master
+    #   jobs:
+    #     - make-artifacts
