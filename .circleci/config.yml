@@ -23,7 +23,7 @@ jobs:
             - run: npm test
             - run: npm pack
 
-  build-and-test2:
+  make-artifacts:
     executor:
       name: node/default
     steps:
@@ -57,7 +57,7 @@ workflows:
     build-and-test:
       jobs:
         - build-and-test
-        - build-and-test2
+        - make-artifacts
     # make-artifacts:
     #   filters:
     #     branches:
