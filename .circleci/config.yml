@@ -18,10 +18,11 @@ jobs:
     executor:
       name: node/default
     steps:
-      - run:
-        command: |
-          echo "make artifacts echo";
-      # branches:
+      - checkout
+      # - run:
+      #   command: |
+      #     echo "make artifacts echo";
+      # # branches:
       #   only:
       #     - master
 
