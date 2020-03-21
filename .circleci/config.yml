@@ -23,7 +23,7 @@ jobs:
             - run: npm test
             - run: npm pack
 
-  make-artifacts:
+  do-artifacts:
     executor:
       name: node/default
     steps:
@@ -63,4 +63,4 @@ workflows:
           only:
             - master
       jobs:
-        - make-artifacts
+        - do-artifacts
